@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="vue/index.html" target="_blank">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 3</h1><br>
+    <div>
+        <form id="ageForm" action="three.php" method="get">
+            Enter your age
+            <input type="text" id="ageInput" name="age"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('ageForm').addEventListener('submit', function(event) {
+            const ageInput = document.getElementById('ageInput');
+            const age = parseInt(ageInput.value);
+
+            if (age > 100) {
+                event.preventDefault();  // Prevent form submission
+                alert('Invalid Input');
+                ageInput.style.borderColor = 'red';
+            } else {
+                ageInput.style.borderColor = ''; // Reset border color if valid
+            }
+        });
+    </script>
+</body>
+</html>
